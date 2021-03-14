@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+
+<div align="center" >
+    <h1>FORM HOTEL</h1>
+
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Counthotelready</th>
+            <th>Counthotelpending</th>
+            <th>Counthotelnotready</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text =" ${answercountready}">  </td>
+            <td th:text = "${answercountpending}">  </td>
+            <td th:text = "${answercountnotready}">  </td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <h1>RID ROOM IS READY</h1>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>RID</th>
+            <th>Status</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="answercount : ${answercount1}">
+            <td th:text = "${answercount.getRidroomReady()}"> Rid </td>
+            <td th:text = "${answercount.getStatus()}"> Status </td>
+            <td th:text = "${answercount.getFirstname()}"> Firstname </td>
+            <td th:text = "${answercount.getLastname()}"> Lastname </td>
+        </tr>
+        </tbody>
+
+    </table>
+    <br>
+    <br>
+        <a href="/"> <input type="button" value="Create Room Customer"> </a>
+</div>
+</body>
+</html>

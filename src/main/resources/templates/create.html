@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CreateHotel</title>
+</head>
+<body>
+<div align="center">
+
+    <form action="#" th:action="@{/save}"  th:object="${hotel}" method="post">
+        <h1>Create Hotel</h1>
+        <br>
+        <table>
+            <tr>
+                <td>Fristname :</td>
+                <td> <input type="text" th:field="*{firstname}"/></td>
+            </tr>
+            <tr>
+                <td>Lastname :</td>
+                <td> <input type="text" th:field="*{lastname}"/></td>
+            </tr>
+            <tr>
+                <td>
+                <select th:field="*{status}">
+                    <option th:value="'Ready'" th:text="Ready"></option>
+                    <option th:value="'Pending'" th:text="Pending"></option>
+                    <option th:value="'NotReady'" th:text="NotReady"></option>
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   <input type="submit" value="save">
+                </td>
+                <td>
+                    <a href="/answer"><input type="button" value="FORM HOTEL" a></a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>
